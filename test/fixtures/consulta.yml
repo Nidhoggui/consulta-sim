@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  paciente: one
+  medico: one
+  data: 2023-06-17
+  horario: 2023-06-17 05:09:54
+
+two:
+  paciente: two
+  medico: two
+  data: 2023-06-17
+  horario: 2023-06-17 05:09:54
