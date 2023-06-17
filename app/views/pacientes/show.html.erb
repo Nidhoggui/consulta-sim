@@ -5,6 +5,53 @@
 <div>
   <%= link_to "Edit this paciente", edit_paciente_path(@paciente) %> |
   <%= link_to "Back to pacientes", pacientes_path %>
+</div>
 
+
+<h2>Endereço</h2>
+<%= render partial: 'enderecos/endereco', locals: { endereco: @paciente.endereco } %>
+
+
+<%= form_with model: @paciente do |form| %>
+
+  <h2>Adicionar Endereço</h2>
+  <%= form.fields_for :endereco, @paciente.build_endereco do |endereco_form| %>
+    <%= endereco_form.label :cep %>
+    <%= endereco_form.text_field :cep %>
+
+    <%= endereco_form.label :cidade %>
+    <%= endereco_form.text_field :cidade %>
+
+    <%= endereco_form.label :bairro %>
+    <%= endereco_form.text_field :bairro %>
+
+    <%= endereco_form.label :logradouro %>
+    <%= endereco_form.text_field :logradouro %>
+
+    <%= endereco_form.label :complemento %>
+    <%= endereco_form.text_field :complemento %>
+  <% end %>
+
+  <%= form.submit "Salvar" %>
+<% end %>
+
+
+<h2>Agendar Consulta</h2>
+
+<%= form_with(model: @consulta, url: agendar_consulta_paciente_path(@paciente)) do |form| %>
+  <%= form.label :data %>
+  <%= form.date_field :data %>
+
+  <%= form.label :horario %>
+  <%= form.time_field :horario %>
+
+  <%= form.label :medico_id %>
+  <%= form.collection_select :medico_id, Medico.all, :id, :nome %>
+
+  <%= form.submit "Agendar Consulta" %>
+<% end %>
+
+
+<div>
   <%= button_to "Destroy this paciente", @paciente, method: :delete %>
 </div>

@@ -13,7 +13,9 @@ class PacientesController < ApplicationController
   # GET /pacientes/new
   def new
     @paciente = Paciente.new
+    @paciente.build_endereco
   end
+
 
   # GET /pacientes/1/edit
   def edit
@@ -57,6 +59,23 @@ class PacientesController < ApplicationController
     end
   end
 
+  def agendar_consulta
+    @paciente = Paciente.find(params[:paciente_id])
+    @consulta = @paciente.consultas.build(consulta_params)
+
+    if @consulta.save
+      redirect_to @paciente, notice: "Consulta agendada com sucesso."
+    else
+      render :show, alert: "Não foi possível agendar a consulta."
+    end
+  end
+
+  private
+
+  def consulta_params
+    params.require(:consulta).permit(:data, :horario, :medico_id)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_paciente
@@ -65,6 +84,9 @@ class PacientesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def paciente_params
-      params.require(:paciente).permit(:nome, :data_nascimento, :cpf, :email)
+      params.require(:paciente).permit(:nome, :data_nascimento, :cpf, :email, endereco_attributes: [:cep, :cidade, :bairro, :logradouro, :complemento])
     end
+
+
+
 end

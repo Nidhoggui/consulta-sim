@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  resources :medicos
   resources :consulta
-  resources :enderecos
-  resources :pacientes
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :medicos do
+    get 'consultas', on: :member
+  end
+
+  resources :pacientes do
+    resources :enderecos
+    post 'agendar_consulta', on: :member
+  end
+
 end

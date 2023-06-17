@@ -1,0 +1,8 @@
+<!-- medicos/consultas.html.erb -->
+<h1>Consultas Agendadas</h1>
+
+<% @consultas.each do |consulta| %>
+  <p>Paciente: <%= consulta.paciente.nome %></p>
+  <p>Data: <%= consulta.data %></p>
+  <p>Horário: <%= consulta.horario %></p>
+<% end %>

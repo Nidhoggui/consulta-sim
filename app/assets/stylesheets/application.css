@@ -1,15 +1,72 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* Estilos para o corpo da página */
+body {
+    background-color: #d4d4d4;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para o contêiner principal */
+.container {
+    background-color: #a9a9a9;
+    border: 8px solid #000000;
+    margin: 50px auto;
+    max-width: 400px;
+    padding: 20px;
+    position: relative;
+}
+
+/* Estilos para o título */
+.container h1 {
+    color: #000000;
+    font-size: 24px;
+    margin: 0 0 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Estilos para os botões */
+.button {
+    background-color: #000000;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #333333;
+}
+
+/* Estilos para as mensagens */
+.message {
+    background-color: #f8f8f8;
+    border: 2px solid #000000;
+    color: #000000;
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.success {
+    background-color: #aaffaa;
+    border-color: #00aa00;
+}
+
+.error {
+    background-color: #ffaaaa;
+    border-color: #aa0000;
+}
+
+.warning {
+    background-color: #ffffaa;
+    border-color: #aaaa00;
+}

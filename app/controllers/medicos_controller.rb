@@ -8,7 +8,15 @@ class MedicosController < ApplicationController
 
   # GET /medicos/1 or /medicos/1.json
   def show
+    @medico = Medico.find(params[:id])
+    @consultas = @medico.consultas
   end
+
+  def consultas
+    @medico = Medico.find(params[:id])
+    @consultas = @medico.consultas
+  end
+
 
   # GET /medicos/new
   def new
