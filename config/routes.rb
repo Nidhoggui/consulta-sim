@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'pages/home'
+
+  root 'pages#home'
+
   resources :consultas
 
   resources :medicos do
@@ -6,7 +10,6 @@ Rails.application.routes.draw do
       get 'consultas', to: 'consultas#index'
     end
   end
-
 
   resources :pacientes do
     resources :enderecos
