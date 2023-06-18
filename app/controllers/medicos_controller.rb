@@ -17,7 +17,6 @@ class MedicosController < ApplicationController
     @consultas = @medico.consultas
   end
 
-
   # GET /medicos/new
   def new
     @medico = Medico.new

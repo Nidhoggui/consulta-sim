@@ -1,8 +1,10 @@
-<!-- medicos/consultas.html.erb -->
-<h1>Consultas Agendadas</h1>
-
-<% @consultas.each do |consulta| %>
-  <p>Paciente: <%= consulta.paciente.nome %></p>
-  <p>Data: <%= consulta.data %></p>
-  <p>Horário: <%= consulta.horario %></p>
+<h2>Consultas</h2>
+<% if @medico.consultas.any? %>
+  <ul>
+    <% @medico.consultas.each do |consulta| %>
+      <li><%= consulta.data %> - <%= consulta.horario %> - <%= consulta.paciente.nome %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Não há consultas agendadas com este médico.</p>
 <% end %>

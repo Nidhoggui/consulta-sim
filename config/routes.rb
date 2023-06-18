@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  resources :consulta
+  resources :consultas
 
   resources :medicos do
-    get 'consultas', on: :member
+    member do
+      get 'consultas', to: 'consultas#index'
+    end
   end
+
 
   resources :pacientes do
     resources :enderecos

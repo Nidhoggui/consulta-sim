@@ -11,7 +11,7 @@ class ConsultaControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get new_consultum_url
+    get consult
     assert_response :success
   end
 
@@ -20,27 +20,27 @@ class ConsultaControllerTest < ActionDispatch::IntegrationTest
       post consulta_url, params: { consultum: { data: @consultum.data, horario: @consultum.horario, medico_id: @consultum.medico_id, paciente_id: @consultum.paciente_id } }
     end
 
-    assert_redirected_to consultum_url(Consultum.last)
+    assert_redirected_to consult(Consultum.last)
   end
 
   test "should show consultum" do
-    get consultum_url(@consultum)
+    get consult(@consultum)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_consultum_url(@consultum)
+    get consult(@consultum)
     assert_response :success
   end
 
   test "should update consultum" do
-    patch consultum_url(@consultum), params: { consultum: { data: @consultum.data, horario: @consultum.horario, medico_id: @consultum.medico_id, paciente_id: @consultum.paciente_id } }
-    assert_redirected_to consultum_url(@consultum)
+    patch consult(@consultum), params: { consultum: { data: @consultum.data, horario: @consultum.horario, medico_id: @consultum.medico_id, paciente_id: @consultum.paciente_id } }
+    assert_redirected_to consult(@consultum)
   end
 
   test "should destroy consultum" do
     assert_difference("Consultum.count", -1) do
-      delete consultum_url(@consultum)
+      delete consult(@consultum)
     end
 
     assert_redirected_to consulta_url

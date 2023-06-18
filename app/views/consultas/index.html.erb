@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Consulta</h1>
+
+<div id="consultas">
+  <% @consultas.each do |consulta| %>
+    <%= render partial: 'consultas/consulta', locals: { consulta: consulta } %>
+    <p>
+      <%= link_to "Show this consulta", consulta %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New consulta", new_consulta_path %>

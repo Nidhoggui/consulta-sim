@@ -62,6 +62,7 @@ class PacientesController < ApplicationController
   def agendar_consulta
     @paciente = Paciente.find(params[:paciente_id])
     @consulta = @paciente.consultas.build(consulta_params)
+    @consulta.medico_id = params[:consult][:medico_id] # Associa o médico selecionado à consulta
 
     if @consulta.save
       redirect_to @paciente, notice: "Consulta agendada com sucesso."
@@ -70,10 +71,11 @@ class PacientesController < ApplicationController
     end
   end
 
+
   private
 
   def consulta_params
-    params.require(:consulta).permit(:data, :horario, :medico_id)
+    params.require(:consult).permit(:data, :horario, :medico_id)
   end
 
   private

@@ -25,7 +25,7 @@ class ConsultaTest < ApplicationSystemTestCase
   end
 
   test "should update Consultum" do
-    visit consultum_url(@consultum)
+    visit consult(@consultum)
     click_on "Edit this consultum", match: :first
 
     fill_in "Data", with: @consultum.data
@@ -39,7 +39,7 @@ class ConsultaTest < ApplicationSystemTestCase
   end
 
   test "should destroy Consultum" do
-    visit consultum_url(@consultum)
+    visit consult(@consultum)
     click_on "Destroy this consultum", match: :first
 
     assert_text "Consultum was successfully destroyed"

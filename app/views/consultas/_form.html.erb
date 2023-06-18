@@ -1,10 +1,10 @@
-<%= form_with(model: consultum) do |form| %>
-  <% if consultum.errors.any? %>
+<%= form_with(model: consulta, url: consultas_path) do |form| %>
+  <% if consulta.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(consultum.errors.count, "error") %> prohibited this consultum from being saved:</h2>
+      <h2><%= pluralize(consulta.errors.count, "error") %> prohibited this consulta from being saved:</h2>
 
       <ul>
-        <% consultum.errors.each do |error| %>
+        <% consulta.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>
