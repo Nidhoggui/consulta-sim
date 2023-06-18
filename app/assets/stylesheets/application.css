@@ -1,72 +1,105 @@
-/* Estilos para o corpo da página */
+/* Definir a paleta de cores */
 body {
-    background-color: #d4d4d4;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    background-color: #ff69b4; /* rosa neon */
+    color: #000000; /* preto */
 }
 
-/* Estilos para o contêiner principal */
-.container {
-    background-color: #a9a9a9;
-    border: 8px solid #000000;
-    margin: 50px auto;
-    max-width: 400px;
-    padding: 20px;
-    position: relative;
-}
-
-/* Estilos para o título */
-.container h1 {
-    color: #000000;
-    font-size: 24px;
-    margin: 0 0 20px;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-/* Estilos para os botões */
+/* Estilizar os botões */
 .button {
-    background-color: #000000;
-    border: none;
-    color: #ffffff;
-    cursor: pointer;
-    display: block;
-    font-size: 16px;
-    margin: 10px auto;
+    background-color: #00bfff; /* azul elétrico */
+    color: #ffffff; /* branco */
     padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    width: 100%;
-}
-
-.button:hover {
-    background-color: #333333;
-}
-
-/* Estilos para as mensagens */
-.message {
-    background-color: #f8f8f8;
-    border: 2px solid #000000;
-    color: #000000;
+    border: none;
+    border-radius: 4px;
+    font-family: Verdana, Arial, sans-serif;
     font-size: 16px;
-    margin-bottom: 20px;
-    padding: 10px;
-    text-align: center;
 }
 
-.success {
-    background-color: #aaffaa;
-    border-color: #00aa00;
+/* Aplicar gradientes */
+.header {
+    background: linear-gradient(to right, #ff00ff, #00ffff); /* gradient rosa para azul */
 }
 
-.error {
-    background-color: #ffaaaa;
-    border-color: #aa0000;
+/* Usar fontes retro */
+h1, p {
+    font-family: "Comic Sans MS", cursive;
 }
 
-.warning {
-    background-color: #ffffaa;
-    border-color: #aaaa00;
+/* Adicionar elementos geométricos */
+.square {
+    width: 100px;
+    height: 100px;
+    background-color: #ffff00; /* amarelo brilhante */
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #00ff00; /* verde limão */
+}
+
+/* Aplicar efeitos de texto */
+.text {
+    text-shadow: 2px 2px 4px #000000; /* sombra */
+    color: #ff0000; /* vermelho */
+}
+
+.blink {
+    animation: blink-animation 1s steps(2, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
+}
+
+/* Adicionar animações simples */
+.animation {
+    transition: transform 0.3s ease-in-out;
+}
+
+.animation:hover {
+    transform: rotate(360deg);
+}
+
+/* Usar layouts assimétricos */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+/* Estilizar elementos de interface retro */
+.scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #ff00ff #00ffff; /* rosa para azul */
+}
+
+.dialog-box {
+    border: 2px solid #ff00ff; /* rosa */
+    padding: 20px;
+}
+
+/* Adicionar fundos e padrões */
+
+
+.checkerboard {
+    background-image: linear-gradient(45deg, #ffffff 25%, transparent 25%),
+    linear-gradient(-45deg, #ffffff 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #ffffff 75%),
+    linear-gradient(-45deg, transparent 75%, #ffffff 75%);
+    background-size: 20px 20px;
+}
+
+/* Estilizar elementos específicos do sistema */
+.menu-item {
+    color: #0000ff; /* azul */
+}
+
+.calendar {
+    background-color: #ffff00; /* amarelo */
+    border: 1px solid #000000; /* preto */
 }
