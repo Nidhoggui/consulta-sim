@@ -15,7 +15,7 @@
 <%= form_with model: @paciente do |form| %>
 
   <h2>Adicionar Endereço</h2>
-  <%= form.fields_for :endereco, @paciente.build_endereco do |endereco_form| %>
+  <%= form.fields_for :endereco, @paciente.endereco || @paciente.build_endereco do |endereco_form| %>
     <%= endereco_form.label :cep %>
     <%= endereco_form.text_field :cep %>
 

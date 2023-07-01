@@ -8,13 +8,15 @@ class ConsultasController < ApplicationController
 
   # GET /consultas/1 or /consultas/1.json
   def show
-    @medico = Medico.find(params[:medico_id])
-    @consultas = Consulta.where(medico_id: @medico.id)
+    @consulta = Consulta.find(params[:id])
+    @paciente = @consulta.paciente
   end
 
   # GET /consultas/new
   def new
     @consulta = Consulta.new
+    @pacientes = Paciente.all
+    @medicos = Medico.all
   end
 
   # GET /consultas/1/edit
@@ -26,12 +28,11 @@ class ConsultasController < ApplicationController
   end
 
   def create
-    @medico = Medico.find(params[:consulta][:medico_id])
-    @consulta = @medico.consultas.build(consulta_params)
+    @consulta = Consulta.new(consulta_params)
 
     respond_to do |format|
       if @consulta.save
-        format.html { redirect_to medico_consultas_path(@medico), notice: "Consulta agendada com sucesso." }
+        format.html { redirect_to consulta_path(@consulta), notice: 'Consulta agendada com sucesso.' }
         format.json { render :show, status: :created, location: @consulta }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -72,6 +73,6 @@ class ConsultasController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def consulta_params
-    params.require(:consult).permit(:paciente_id, :medico_id, :data, :horario)
+    params.require(:consulta).permit(:paciente_id, :medico_id, :data, :horario)
   end
 end

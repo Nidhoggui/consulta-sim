@@ -1,5 +1,5 @@
 class PacientesController < ApplicationController
-  before_action :set_paciente, only: %i[ show edit update destroy ]
+  before_action :set_paciente, only: %i[show edit update destroy]
 
   # GET /pacientes or /pacientes.json
   def index
@@ -15,7 +15,6 @@ class PacientesController < ApplicationController
     @paciente = Paciente.new
     @paciente.build_endereco
   end
-
 
   # GET /pacientes/1/edit
   def edit
@@ -71,24 +70,19 @@ class PacientesController < ApplicationController
     end
   end
 
-
   private
 
   def consulta_params
     params.require(:consult).permit(:data, :horario, :medico_id)
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_paciente
-      @paciente = Paciente.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_paciente
+    @paciente = Paciente.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def paciente_params
-      params.require(:paciente).permit(:nome, :data_nascimento, :cpf, :email, endereco_attributes: [:cep, :cidade, :bairro, :logradouro, :complemento])
-    end
-
-
-
+  # Only allow a list of trusted parameters through.
+  def paciente_params
+    params.require(:paciente).permit(:nome, :data_nascimento, :cpf, :email, endereco_attributes: [:cep, :cidade, :bairro, :logradouro, :complemento])
+  end
 end
