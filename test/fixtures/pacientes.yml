@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  nome: MyString
-  data_nascimento: 2023-06-17
-  cpf: MyString
-  email: MyString
+  nome: John Doe
+  data_nascimento: 1990-01-01
+  cpf: 12345678901
+  email: john@example.com
 
 two:
-  nome: MyString
-  data_nascimento: 2023-06-17
-  cpf: MyString
-  email: MyString
+  nome: Jane Smith
+  data_nascimento: 1985-05-10
+  cpf: 98765432109
+  email: jane@example.com

@@ -13,4 +13,6 @@ class Consulta < ApplicationRecord
   validates :data, presence: true
   validates :data, date: { after: -> { Date.current }, message: "deve ser posterior à data atual" }
   validates :horario, presence: true
+  validates :medico_id, presence: true
+  validates :paciente_id, presence: true
 end
